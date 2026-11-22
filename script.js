@@ -151,7 +151,6 @@ function scene(T){
   setX('rt','RATE '+Math.round(lerp(2,6,pr))+'%');
   for(let i=0;i<6;i++)setO('cn'+i,clamp((6*(1-.8*pr)-i)*3));
 }
-
 return {P:'s3-',loop:LOOP,fn:scene};})());
 scenes.push((()=>{
 const LOOP=11;
