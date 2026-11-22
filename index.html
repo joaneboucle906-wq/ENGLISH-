@@ -1,58 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La politique monétaire face à l'inflation</title>
+<title>Monetary Policy against Inflation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Permanent+Marker&display=swap">
-<style>
-/* Layout: white slides; text on the left, looping stick-figure animation on the right. */
-:root{--paper:#FFFFFF;--ink:#000000;--muted:#4a4a4a;--marker:'Permanent Marker','Marker Felt','Comic Sans MS',cursive;--body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);overflow:hidden}
-.slide{display:none;position:absolute;inset:0;padding:clamp(20px,4vw,56px) clamp(20px,5vw,72px) 72px;overflow:auto}
-.slide.on{display:grid}
-.tag{font-family:var(--marker);font-size:clamp(1rem,1.6vw,1.4rem);margin:0 0 .4rem;display:inline-block;border-bottom:5px solid var(--ink);padding-bottom:2px;align-self:start;justify-self:start}
-h1,h2{font-family:var(--marker);font-weight:400;line-height:1.1;margin:.2rem 0 1rem;text-wrap:balance}
-h1{font-size:clamp(2.2rem,6.2vw,5rem)}
-h2{font-size:clamp(1.6rem,3.3vw,3rem)}
-.title{align-content:center;justify-items:start;max-width:1100px;margin:0 auto}
-.sub{font-size:clamp(1.1rem,2.2vw,1.8rem);color:var(--muted);margin:0 0 2rem;max-width:34ch}
-.by{font-size:clamp(.9rem,1.4vw,1.1rem);color:var(--muted);margin:0}
-.plain{align-content:center;max-width:1000px;margin:0 auto;width:100%}
-.plan{list-style:none;margin:0;padding:0;display:grid;gap:clamp(10px,1.8vh,18px)}
-.plan li,.slide ul li{display:grid;gap:2px}
-.plan b{font-size:clamp(1.1rem,2.2vw,1.8rem)}
-.plan span{font-size:clamp(.95rem,1.6vw,1.3rem);color:var(--muted)}
-.split{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(16px,3vw,48px);align-items:center;align-content:center}
-.txt{min-width:0}
-.slide ul{list-style:none;margin:0;padding:0;display:grid;gap:clamp(10px,1.8vh,18px)}
-.slide ul li b{font-size:clamp(1.05rem,1.8vw,1.5rem)}
-.slide ul li span{font-size:clamp(.95rem,1.45vw,1.25rem);color:var(--muted);line-height:1.4}
-.ask{margin:1.2rem 0 0;font-family:var(--marker);font-size:clamp(1rem,1.7vw,1.45rem);line-height:1.3}
-.art{min-width:0}
-svg.scene{display:block;width:100%;height:auto;max-height:calc(100vh - 170px)}
-svg.scene text{fill:#000;stroke:none;font-family:var(--marker)}
-.bar{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));opacity:.3;transition:opacity .2s}
-.bar:hover,.bar:focus-within{opacity:1}
-.bar button{width:36px;height:36px;padding:0;border:0;border-radius:50%;background:var(--paper);color:var(--ink);cursor:pointer;font-size:22px;line-height:1;display:grid;place-items:center}
-.bar button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.bar svg{width:100%;height:100%;display:block}
-#count{font-size:.9rem;min-width:3.6em;text-align:center;font-variant-numeric:tabular-nums}
-#fs{margin-left:10px}
-h3{font-family:var(--marker);font-weight:400;font-size:clamp(1.1rem,2vw,1.6rem);margin:0 0 .8rem}
-.wide{max-width:1200px}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px)}
-.cols>div{min-width:0}
-@media (max-width:820px){
-  .cols{grid-template-columns:1fr}
-  .split{grid-template-columns:1fr;align-content:start;gap:12px}
-  svg.scene{max-height:none}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -64,82 +19,195 @@ h3{font-family:var(--marker);font-weight:400;font-size:clamp(1.1rem,2vw,1.6rem);
 </defs>
 </svg>
 <section class="slide title on">
-  <p class="tag">Exposé</p>
-  <h1>La politique monétaire face à l&rsquo;inflation</h1>
-  <p class="sub">Comment la banque centrale peut-elle freiner la hausse des prix sans étouffer l&rsquo;économie&nbsp;?</p>
-  <p class="by">Présenté par : [vos noms] &middot; [classe / cours] &middot; [date]</p>
-</section>
-<section class="slide plain">
-  <p class="tag">Sommaire</p>
-  <h2>Notre plan</h2>
-  <ol class="plan">
-    <li><b>Introduction</b><span>L&rsquo;inflation et la mission de la banque centrale</span></li>
-    <li><b>I. La boîte à outils de la banque centrale</b><span>Taux directeurs, open market, réserves obligatoires</span></li>
-    <li><b>II. Les mécanismes de transmission</b><span>Coût du crédit, consommation et investissement, monnaie</span></li>
-    <li><b>III. Défis, limites et arbitrages</b><span>Risque de récession, délais d&rsquo;action, chocs d&rsquo;offre</span></li>
-    <li><b>Conclusion</b><span>Un outil essentiel, mais encadré par des limites</span></li>
-  </ol>
+  <p class="tag">Presentation</p>
+  <h1>Monetary Policy <em>against</em> Inflation</h1>
+  <p class="sub">How can a central bank slow rising prices without choking the economy?</p>
+  <p class="by">Presented by: [your name(s)] &middot; [class / course] &middot; [date]</p>
 </section>
 <section class="slide split" data-anim="0">
   <div class="txt">
-    <p class="tag">Introduction</p>
-    <h2>Maîtriser l&rsquo;inflation</h2>
-    <ul>
-      <li><b>L&rsquo;inflation</b><span>Hausse générale et durable des prix.</span></li>
-      <li><b>Le danger</b><span>Elle réduit le pouvoir d&rsquo;achat des ménages et complique les décisions des entreprises.</span></li>
-      <li><b>La réponse</b><span>La banque centrale agit sur les conditions de financement pour ramener l&rsquo;inflation vers son objectif de stabilité des prix.</span></li>
-    </ul>
-    <p class="ask">Comment la politique monétaire maîtrise-t-elle l&rsquo;inflation, et quelles sont ses limites&nbsp;?</p>
+    <p class="tag">Table of contents</p>
+    <h2>Our outline</h2>
+    <ol class="plan">
+      <li><b>Introduction</b><span>Inflation and the central bank</span></li>
+      <li><b>I. The central bank&rsquo;s toolkit</b><span>Controlling the money supply</span></li>
+      <li><b>II. Transmission mechanisms</b><span>From interest rates to prices</span></li>
+      <li><b>III. Challenges and trade-offs</b><span>Recession, time lags, supply shocks</span></li>
+      <li><b>Conclusion</b><span>Price stability</span></li>
+    </ol>
   </div>
-  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="Un personnage tire une corde pour ramener la flèche des prix à l’horizontale"><g id="s1-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
-<path id="s1-rope" d="M0 0" stroke-width="5"/>
-<g id="s1-arrow">
-<g id="s1-flame" stroke-width="6"><path d="M-20 82 L-10 112 L0 88 L10 116 L20 82"/></g>
-<path d="M-30 74 V-50 H-58 L0 -108 L58 -50 H30 V74 Z" fill="#fff"/>
-<text transform="rotate(-90) translate(0 12)" text-anchor="middle" font-size="34">PRIX</text>
-</g>
-<g id="s1-f"><g id="s1-f-lL"><path d="M0 0 V78 H13"/></g><g id="s1-f-lR"><path d="M0 0 V78 H13"/></g><g id="s1-f-body"><g id="s1-f-aL"><path d="M0 0 V42"/><g id="s1-f-aL2"><path d="M0 0 V42"/></g></g><path d="M0 0 V-82"/><circle cx="0" cy="-106" r="24" fill="#fff"/><circle id="s1-f-eA" cx="9" cy="-110" r="3.4" fill="#000" stroke="none"/><circle id="s1-f-eB" cx="-7" cy="-110" r="3.4" fill="#000" stroke="none" opacity="0"/><path id="s1-f-mouth" d="M0 -96 Q8 -94 16 -96" stroke-width="4"/><g id="s1-f-aR"><path d="M0 0 V42"/><g id="s1-f-aR2"><path d="M0 0 V42"/></g></g></g></g></g></svg></div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A friendly stick figure walks along five signposts that mark the outline"><g id="s0-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/><path d="M110 400 V165" stroke-width="6"/><rect id="s0-sgb0" x="62" y="110" width="96" height="56" rx="8" fill="#fff" stroke-width="6" class="bl"/><text x="110" y="148" text-anchor="middle" font-size="26" class="t-bl">INTRO</text><path d="M255 400 V165" stroke-width="6"/><rect id="s0-sgb1" x="207" y="110" width="96" height="56" rx="8" fill="#fff" stroke-width="6" class="bl"/><text x="255" y="148" text-anchor="middle" font-size="26" class="t-bl">I</text><path d="M400 400 V165" stroke-width="6"/><rect id="s0-sgb2" x="352" y="110" width="96" height="56" rx="8" fill="#fff" stroke-width="6" class="bl"/><text x="400" y="148" text-anchor="middle" font-size="26" class="t-bl">II</text><path d="M545 400 V165" stroke-width="6"/><rect id="s0-sgb3" x="497" y="110" width="96" height="56" rx="8" fill="#fff" stroke-width="6" class="bl"/><text x="545" y="148" text-anchor="middle" font-size="26" class="t-bl">III</text><path d="M690 400 V165" stroke-width="6"/><rect id="s0-sgb4" x="642" y="110" width="96" height="56" rx="8" fill="#fff" stroke-width="6" class="bl"/><text x="690" y="148" text-anchor="middle" font-size="26" class="t-bl">END</text><g class="fig" id="s0-f"></g></g></svg></div>
 </section>
 <section class="slide split" data-anim="1">
   <div class="txt">
-    <p class="tag">Partie I</p>
-    <h2>La boîte à outils de la banque centrale</h2>
+    <p class="tag">Introduction</p>
+    <h2>Controlling inflation</h2>
     <ul>
-      <li><b>A. Les taux directeurs</b><span>Principal levier : le crédit devient plus cher, les emprunts, la consommation et l&rsquo;investissement reculent.</span></li>
-      <li><b>B. L&rsquo;open market</b><span>Elle vend des titres aux banques, qui paient avec leurs réserves : moins de liquidités, moins de création monétaire.</span></li>
-      <li><b>C. Les réserves obligatoires</b><span>Relever le taux oblige les banques à bloquer plus de fonds : moins de crédit, demande ralentie.</span></li>
+      <li><b>Inflation</b><span>A general and sustained increase in prices.</span></li>
+      <li><b>The threat</b><span>It reduces households&rsquo; purchasing power and makes business decisions harder.</span></li>
+      <li><b>The response</b><span>The central bank acts on financing conditions to bring inflation back to its price stability target.</span></li>
     </ul>
-    <p class="ask">Objectif : contrôler la masse monétaire.</p>
+    <p class="ask">How does monetary policy control inflation, and what are its limitations?</p>
   </div>
-  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="Un banquier central actionne des leviers et ferme une vanne pour réduire le flux d’argent"><g id="s2-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A stick figure pulls a rope to bring the rising red PRICES arrow back to horizontal"><g id="s1-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+<path id="s1-rope" d="M0 0" stroke-width="5" class="bl"/>
+<g id="s1-arrow">
+<g id="s1-flame" stroke-width="6" class="rd"><path d="M-20 82 L-10 112 L0 88 L10 116 L20 82"/></g>
+<path d="M-30 74 V-50 H-58 L0 -108 L58 -50 H30 V74 Z" fill="#fff" class="rd rdf"/>
+<text transform="rotate(-90) translate(0 12)" text-anchor="middle" font-size="26" class="t-rd">PRICES</text>
+</g>
+<g class="fig" id="s1-f"></g></g></svg></div>
+</section>
+<section class="slide split" data-anim="2">
+  <div class="txt">
+    <p class="tag">Part I</p>
+    <h2>The central bank&rsquo;s toolkit</h2>
+    <ul>
+      <li><b>The goal</b><span>Limit money creation, which mainly comes from bank lending.</span></li>
+      <li><b>The means</b><span>Instruments that act on commercial banks&rsquo; liquidity and their ability to lend.</span></li>
+      <li><b>Three tools</b><span>A. Key interest rates &middot; B. Open market operations &middot; C. Reserve requirements.</span></li>
+    </ul>
+    <p class="ask">Controlling the money supply.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A central banker pushes levers and closes a valve so less money flows"><g id="s2-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
 <g stroke-width="6">
-<rect x="175" y="95" width="285" height="215" rx="10" fill="#fff"/>
+<rect x="175" y="95" width="285" height="215" rx="10" fill="#fff" class="bl blf"/>
 <path d="M215 175 V275 M200 288 H230"/>
-<circle id="s2-hA" cx="215" cy="265" r="13" fill="#fff"/>
+<circle id="s2-hA" cx="215" cy="265" r="13" fill="#fff" class="bl blf"/>
 <path d="M322 300 H358"/>
-<g id="s2-lvB" transform="translate(340 295)"><path d="M0 0 V-82"/><circle cx="0" cy="-82" r="12" fill="#fff"/></g>
+<g id="s2-lvB" transform="translate(340 295)" class="bl"><path d="M0 0 V-82"/><circle cx="0" cy="-82" r="12" fill="#fff" class="blf"/></g>
 <path d="M385 150 A30 30 0 0 1 445 150 Z" fill="#fff" stroke-width="5"/>
 <g id="s2-needle" transform="translate(415 150)"><path d="M0 0 V-24" stroke-width="5"/></g>
 <path d="M635 10 V196 M665 10 V196 M635 234 V264 M665 234 V264"/>
 <rect x="626" y="196" width="48" height="38" rx="6" fill="#fff"/>
 </g>
-<text x="215" y="150" text-anchor="middle" font-size="28">%</text>
+<text x="215" y="150" text-anchor="middle" font-size="28" class="t-bl">%</text>
 <g transform="translate(650 400)" stroke-width="5"><path d="M-48 0 Q-42 -20 -22 -22 Q-6 -38 12 -24 Q38 -24 48 0" fill="#fff"/><circle cx="-20" cy="-8" r="9" fill="#fff"/><circle cx="6" cy="-12" r="9" fill="#fff"/><circle cx="30" cy="-8" r="9" fill="#fff"/></g>
-<g id="s2-wheel" transform="translate(650 215)" stroke-width="6"><circle r="30" fill="#fff"/><path d="M-30 0 H30 M0 -30 V30"/><circle r="5" fill="#000" stroke="none"/></g>
-<g id="s2-c0" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c1" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c2" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c3" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c4" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c5" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c6" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c7" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c8" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c9" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c10" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c11" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c12" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c13" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c14" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c15" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-f"><g id="s2-f-lL"><path d="M0 0 V78 H13"/></g><g id="s2-f-lR"><path d="M0 0 V78 H13"/></g><g id="s2-f-body"><g id="s2-f-aL"><path d="M0 0 V42"/><g id="s2-f-aL2"><path d="M0 0 V42"/></g></g><path d="M0 0 V-82"/><circle cx="0" cy="-106" r="24" fill="#fff"/><circle id="s2-f-eA" cx="9" cy="-110" r="3.4" fill="#000" stroke="none"/><circle id="s2-f-eB" cx="-7" cy="-110" r="3.4" fill="#000" stroke="none" opacity="0"/><path id="s2-f-mouth" d="M0 -96 Q8 -94 16 -96" stroke-width="4"/><g id="s2-f-aR"><path d="M0 0 V42"/><g id="s2-f-aR2"><path d="M0 0 V42"/></g></g></g></g></g></svg></div>
+<g id="s2-wheel" transform="translate(650 215)" stroke-width="6" class="bl"><circle r="30" fill="#fff" class="blf"/><path d="M-30 0 H30 M0 -30 V30"/><circle r="5" fill="#000" stroke="none"/></g>
+<g id="s2-c0" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c1" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c2" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c3" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c4" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c5" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c6" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c7" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c8" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c9" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c10" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c11" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c12" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c13" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g id="s2-c14" stroke-width="4"><circle r="10" fill="#fff"/><circle r="3.5" fill="#000" stroke="none"/></g><g id="s2-c15" stroke-width="4"><rect x="-15" y="-8" width="30" height="16" rx="2" fill="#fff"/><circle r="3.5"/></g><g class="fig" id="s2-f"></g></g></svg></div>
 </section>
-<section class="slide split" data-anim="2">
+<section class="slide split" data-anim="3">
   <div class="txt">
-    <p class="tag">Partie II</p>
-    <h2>Les mécanismes de transmission</h2>
+    <p class="tag">Part I &middot; A</p>
+    <h2>Key interest rates</h2>
     <ul>
-      <li><b>A. Hausse des taux et du coût du crédit</b><span>Taux bancaires plus élevés, moins de demande de crédit, épargne plus attractive.</span></li>
-      <li><b>B. Baisse de la consommation et de l&rsquo;investissement</b><span>Achats et projets reportés : les entreprises peinent à augmenter leurs prix.</span></li>
-      <li><b>C. Appréciation de la monnaie</b><span>Les capitaux étrangers affluent, les importations coûtent moins cher : l&rsquo;inflation importée recule (exemple de la BNS).</span></li>
+      <li><b>The main lever</b><span>When inflation rises, the central bank raises its interest rates.</span></li>
+      <li><b>Costlier credit</b><span>Banks, households and businesses borrow less.</span></li>
+      <li><b>Weaker demand</b><span>Consumption and investment fall, so firms face less pressure to raise prices.</span></li>
+      <li><b>Not immediate</b><span>The effects spread gradually through the economy.</span></li>
     </ul>
-    <p class="ask">Une politique restrictive freine les prix de proche en proche.</p>
+    <p class="ask">Higher rates, less borrowing.</p>
   </div>
-  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="Un consommateur renonce à acheter quand les taux montent et épargne dans une tirelire"><g id="s3-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A stick figure pushes a lever: the rate gauge rises and the credit coins shrink"><g id="s3-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+<path d="M335 352 V400 M305 352 H365" stroke-width="6"/>
+<g id="s3-lv" transform="translate(335 350)" class="bl" stroke-width="6"><path d="M0 0 V-85"/><circle cx="0" cy="-85" r="11" fill="#fff" class="blf"/></g>
+<rect x="470" y="104" width="44" height="252" rx="10" fill="#fff" stroke-width="6"/>
+<rect id="s3-gf" x="476" y="304" width="32" height="52" rx="6" fill="#1d4ed8" stroke="none"/>
+<path d="M470 150 H488 M470 200 H488 M470 250 H488 M470 300 H488" stroke-width="4"/>
+<text id="s3-rt" x="492" y="82" text-anchor="middle" font-size="24" class="t-bl">RATE 2%</text>
+<g id="s3-cn0" transform="translate(640 372)"><ellipse rx="34" ry="10" fill="#fff" stroke-width="4"/></g><g id="s3-cn1" transform="translate(640 352)"><ellipse rx="34" ry="10" fill="#fff" stroke-width="4"/></g><g id="s3-cn2" transform="translate(640 332)"><ellipse rx="34" ry="10" fill="#fff" stroke-width="4"/></g><g id="s3-cn3" transform="translate(640 312)"><ellipse rx="34" ry="10" fill="#fff" stroke-width="4"/></g><g id="s3-cn4" transform="translate(640 292)"><ellipse rx="34" ry="10" fill="#fff" stroke-width="4"/></g><g id="s3-cn5" transform="translate(640 272)"><ellipse rx="34" ry="10" fill="#fff" stroke-width="4"/></g>
+<text x="640" y="236" text-anchor="middle" font-size="22" class="t-bl">CREDIT</text>
+<g class="fig" id="s3-f"></g></g></svg></div>
+</section>
+<section class="slide split" data-anim="4">
+  <div class="txt">
+    <p class="tag">Part I &middot; B</p>
+    <h2>Open market operations</h2>
+    <ul>
+      <li><b>Injecting liquidity</b><span>Buying securities from banks raises their reserves and stimulates credit.</span></li>
+      <li><b>Withdrawing liquidity</b><span>To fight inflation, the central bank sells securities to banks.</span></li>
+      <li><b>The effect</b><span>Banks pay with their reserves: less liquidity, slower money creation, easier inflationary pressure.</span></li>
+    </ul>
+    <p class="ask">Selling securities drains liquidity.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A stick figure carries a bond to the banks and brings money back, so bank reserves fall"><g id="s4-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+<path d="M25 232 L85 190 L145 232 Z" fill="#fff" stroke-width="6" class="bl blf"/>
+<rect x="35" y="232" width="100" height="168" fill="#fff" stroke-width="6" class="bl blf"/>
+<text x="85" y="330" text-anchor="middle" font-size="34" class="t-bl">CB</text>
+<path d="M635 252 L710 205 L785 252 Z" fill="#fff" stroke-width="6" class="bl blf"/>
+<rect x="645" y="252" width="130" height="148" fill="#fff" stroke-width="6" class="bl blf"/>
+<text x="710" y="340" text-anchor="middle" font-size="26" class="t-bl">BANKS</text>
+<rect x="698" y="96" width="24" height="98" rx="4" fill="#fff" stroke-width="5"/>
+<rect id="s4-rs" x="701" y="100" width="18" height="90" fill="#1d4ed8" stroke="none"/>
+<text x="710" y="82" text-anchor="middle" font-size="14" class="t-bl">RESERVES</text>
+<g class="fig" id="s4-f"></g>
+<g id="s4-doc"><rect x="-24" y="-16" width="48" height="32" fill="#fff" stroke-width="4" class="bl"/><text y="5" text-anchor="middle" font-size="13" class="t-bl">BOND</text></g>
+<g id="s4-bag"><path d="M-14 -4 Q-20 18 0 18 Q20 18 14 -4 Z" fill="#fff" stroke-width="4"/><path d="M-8 -10 L0 -4 L8 -10" stroke-width="4"/><text y="13" text-anchor="middle" font-size="16">$</text></g>
+</g></svg></div>
+</section>
+<section class="slide split" data-anim="5">
+  <div class="txt">
+    <p class="tag">Part I &middot; C</p>
+    <h2>Reserve requirements</h2>
+    <ul>
+      <li><b>The ratio</b><span>The share of funds banks must hold with the central bank.</span></li>
+      <li><b>Raising it</b><span>Banks set aside more, lend less, and aggregate demand slows.</span></li>
+      <li><b>Lowering it</b><span>Resources are released so banks can lend more and stimulate activity.</span></li>
+    </ul>
+    <p class="ask">A higher ratio means fewer loans.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A stick figure raises the reserve ratio: the safe fills and loans dry up"><g id="s5-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+<rect x="420" y="170" width="170" height="230" rx="12" fill="#fff" stroke-width="6" class="bl"/>
+<rect x="440" y="190" width="130" height="190" fill="#fff" stroke-width="4"/>
+<rect id="s5-rv" x="442" y="300" width="126" height="78" fill="#1d4ed8" stroke="none"/>
+<text x="505" y="152" text-anchor="middle" font-size="22" class="t-bl">RESERVES</text>
+<path d="M300 336 V256" stroke-width="5" class="bl"/>
+<g id="s5-kn" transform="translate(300 322)"><circle r="13" fill="#fff" stroke-width="6" class="bl blf"/></g>
+<text id="s5-pc" x="345" y="232" text-anchor="middle" font-size="20" class="t-bl">RATIO 5%</text>
+<text x="715" y="300" text-anchor="middle" font-size="22" class="t-bl">LOANS</text>
+<circle id="s5-c0" r="8" fill="#fff" stroke-width="4"/><circle id="s5-c1" r="8" fill="#fff" stroke-width="4"/><circle id="s5-c2" r="8" fill="#fff" stroke-width="4"/><circle id="s5-c3" r="8" fill="#fff" stroke-width="4"/><circle id="s5-c4" r="8" fill="#fff" stroke-width="4"/><circle id="s5-c5" r="8" fill="#fff" stroke-width="4"/><circle id="s5-c6" r="8" fill="#fff" stroke-width="4"/><circle id="s5-c7" r="8" fill="#fff" stroke-width="4"/><g class="fig" id="s5-f"></g></g></svg></div>
+</section>
+<section class="slide split" data-anim="6">
+  <div class="txt">
+    <p class="tag">Part II</p>
+    <h2>The transmission mechanisms</h2>
+    <ul>
+      <li><b>Indirect action</b><span>Monetary policy acts on inflation through a chain of reactions.</span></li>
+      <li><b>Restrictive policy</b><span>It gradually affects the whole economy and helps slow the rise in prices.</span></li>
+      <li><b>The chain</b><span>Key rates &rarr; cost of credit &rarr; demand &rarr; prices.</span></li>
+    </ul>
+    <p class="ask">One push, and everything follows.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A stick figure tips the first domino and the chain ends with the PRICES domino"><g id="s6-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/><g id="s6-d0" transform="translate(340 400)"><rect x="-46" y="-100" width="46" height="100" rx="6" fill="#fff" stroke-width="6" class="bl blf"/><text transform="translate(-23 -50) rotate(-90)" text-anchor="middle" font-size="17" class="t-bl">RATE</text></g><g id="s6-d1" transform="translate(430 400)"><rect x="-46" y="-100" width="46" height="100" rx="6" fill="#fff" stroke-width="6" class="bl blf"/><text transform="translate(-23 -50) rotate(-90)" text-anchor="middle" font-size="17" class="t-bl">CREDIT</text></g><g id="s6-d2" transform="translate(520 400)"><rect x="-46" y="-100" width="46" height="100" rx="6" fill="#fff" stroke-width="6" class="bl blf"/><text transform="translate(-23 -50) rotate(-90)" text-anchor="middle" font-size="17" class="t-bl">DEMAND</text></g><g id="s6-d3" transform="translate(610 400)"><rect x="-46" y="-100" width="46" height="100" rx="6" fill="#fff" stroke-width="6" class="rd rdf"/><text transform="translate(-23 -50) rotate(-90)" text-anchor="middle" font-size="17" class="t-rd">PRICES</text></g><g class="fig" id="s6-f"></g></g></svg></div>
+</section>
+<section class="slide split" data-anim="7">
+  <div class="txt">
+    <p class="tag">Part II &middot; A</p>
+    <h2>Higher rates, costlier credit</h2>
+    <ul>
+      <li><b>Bank rates</b><span>Bank interest rates go up.</span></li>
+      <li><b>Loans</b><span>Mortgages, consumer loans and business loans cost more.</span></li>
+      <li><b>Credit demand</b><span>Demand for credit declines.</span></li>
+      <li><b>Saving</b><span>Saving becomes more attractive.</span></li>
+    </ul>
+    <p class="ask">Households and firms borrow less, so spending and investment slow.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="The loan rate rises, the figure shrugs and walks away: borrowing falls and saving rises"><g id="s7-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+<text x="92" y="205" text-anchor="middle" font-size="17" class="t-bl">BORROW</text>
+<text x="192" y="205" text-anchor="middle" font-size="17" class="t-bl">SAVE</text>
+<rect id="s7-bb" x="60" y="230" width="64" height="170" fill="#1d4ed8" stroke-width="5"/>
+<rect id="s7-bs" x="160" y="340" width="64" height="60" fill="#93c5fd" stroke-width="5"/>
+<path d="M600 250 L695 195 L790 250 Z" fill="#fff" stroke-width="6" class="bl blf"/>
+<rect x="610" y="250" width="170" height="150" fill="#fff" stroke-width="6" class="bl blf"/>
+<rect x="670" y="320" width="50" height="80" fill="#fff" stroke-width="5"/>
+<rect x="625" y="95" width="140" height="70" rx="8" fill="#fff" stroke-width="6" class="bl"/>
+<text id="s7-rt" x="695" y="148" text-anchor="middle" font-size="44" class="t-bl">3%</text>
+<text x="695" y="84" text-anchor="middle" font-size="16" class="t-bl">LOAN RATE</text>
+<g class="fig" id="s7-f"></g></g></svg></div>
+</section>
+<section class="slide split" data-anim="8">
+  <div class="txt">
+    <p class="tag">Part II &middot; B</p>
+    <h2>Lower consumption and investment</h2>
+    <ul>
+      <li><b>Households</b><span>They postpone major purchases such as housing or durable goods.</span></li>
+      <li><b>Businesses</b><span>They postpone investment projects that are less profitable.</span></li>
+      <li><b>Demand</b><span>Consumption, investment and domestic demand all decline.</span></li>
+      <li><b>Prices</b><span>Firms find it harder to raise prices.</span></li>
+    </ul>
+    <p class="ask">Inflationary pressures ease.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A consumer gives up buying at high interest rates and saves in a piggy bank"><g id="s8-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
 <g stroke-width="6">
 <rect x="440" y="110" width="340" height="292" fill="#fff"/>
 <path d="M478 400 V292 H610 V400"/>
@@ -148,366 +216,167 @@ h3{font-family:var(--marker);font-weight:400;font-size:clamp(1.1rem,2vw,1.6rem);
 <rect x="492" y="312" width="26" height="26"/>
 <path d="M584 238 V212 H600 V262"/>
 </g>
-<g id="s3-tag" transform="translate(700 112)"><path d="M0 0 V22"/><path d="M-70 22 H70 V112 H-70 Z" fill="#fff" stroke-width="5"/>
-<text x="-16" y="56" text-anchor="middle" font-size="20">Taux</text><text x="-16" y="86" text-anchor="middle" font-size="20">d'intérêt</text>
-<path d="M52 98 V52 M40 64 L52 50 L64 64" stroke-width="6"/></g>
-<g id="s3-pa" transform="translate(130 92)"><path d="M-46 0 H46 M20 -22 L48 0 L20 22"/></g>
-<text x="130" y="152" text-anchor="middle" font-size="22">PRIX</text>
-<g id="s3-pig" transform="translate(72 398)" stroke-width="5">
+<g id="s8-tag" transform="translate(700 112)"><path d="M0 0 V22"/><path d="M-70 22 H70 V112 H-70 Z" fill="#fff" stroke-width="5" class="bl blf"/>
+<text x="-16" y="56" text-anchor="middle" font-size="20" class="t-bl">Interest</text><text x="-16" y="86" text-anchor="middle" font-size="20" class="t-bl">rate</text>
+<path d="M52 98 V52 M40 64 L52 50 L64 64" stroke-width="6" class="bl"/></g>
+<g id="s8-pa" transform="translate(130 92)" class="rd"><path d="M-46 0 H46 M20 -22 L48 0 L20 22"/></g>
+<text x="130" y="152" text-anchor="middle" font-size="22" class="t-rd">PRICES</text>
+<g id="s8-pig" transform="translate(72 398)" stroke-width="5">
 <ellipse cx="0" cy="-36" rx="44" ry="34" fill="#fff"/><ellipse cx="50" cy="-32" rx="10" ry="9" fill="#fff"/>
 <path d="M18 -64 L30 -82 L40 -58"/><circle cx="32" cy="-44" r="3" fill="#000" stroke="none"/>
 <path d="M-14 -70 H8"/><path d="M-22 -6 V0 M22 -6 V0"/><path d="M-44 -40 q-14 -4 -8 -18"/></g>
-<g id="s3-f"><g id="s3-f-lL"><path d="M0 0 V78 H13"/></g><g id="s3-f-lR"><path d="M0 0 V78 H13"/></g><g id="s3-f-body"><g id="s3-f-aL"><path d="M0 0 V42"/><g id="s3-f-aL2"><path d="M0 0 V42"/></g></g><path d="M0 0 V-82"/><circle cx="0" cy="-106" r="24" fill="#fff"/><circle id="s3-f-eA" cx="9" cy="-110" r="3.4" fill="#000" stroke="none"/><circle id="s3-f-eB" cx="-7" cy="-110" r="3.4" fill="#000" stroke="none" opacity="0"/><path id="s3-f-mouth" d="M0 -96 Q8 -94 16 -96" stroke-width="4"/><g id="s3-f-aR"><path d="M0 0 V42"/><g id="s3-f-aR2"><path d="M0 0 V42"/></g></g></g></g>
-<g id="s3-wal" stroke-width="5"><rect x="-15" y="-10" width="30" height="21" rx="3" fill="#fff"/><g id="s3-wf" transform="translate(-15 -10)"><path d="M0 0 H30"/></g></g>
-<g id="s3-coin" stroke-width="5"><circle r="10" fill="#fff"/><circle r="3" fill="#000" stroke="none"/></g>
-<path id="s3-sw" d="M0 -12 Q9 3 0 9 Q-9 3 0 -12Z" fill="#fff" stroke-width="4"/>
+<g class="fig" id="s8-f"></g>
+<g id="s8-wal" stroke-width="5"><rect x="-15" y="-10" width="30" height="21" rx="3" fill="#fff"/><g id="s8-wf" transform="translate(-15 -10)"><path d="M0 0 H30"/></g></g>
+<g id="s8-coin" stroke-width="5"><circle r="10" fill="#fff"/><circle r="3" fill="#000" stroke="none"/></g>
+<path id="s8-sw" d="M0 -12 Q9 3 0 9 Q-9 3 0 -12Z" fill="#fff" stroke-width="4"/>
 </g></svg></div>
 </section>
-<section class="slide split" data-anim="3">
+<section class="slide split" data-anim="9">
   <div class="txt">
-    <p class="tag">Partie III &middot; A</p>
-    <h2>Le risque de récession</h2>
+    <p class="tag">Part II &middot; C</p>
+    <h2>Currency appreciation</h2>
     <ul>
-      <li><b>Le dilemme</b><span>La banque centrale freine l&rsquo;inflation en comprimant la demande : un coup de frein trop brutal pèse sur l&rsquo;activité et l&rsquo;emploi.</span></li>
-      <li><b>Courbe de Phillips</b><span>Arbitrage de court terme entre stabilité des prix et chômage.</span></li>
-      <li><b>Ratio de sacrifice</b><span>Perte de PIB liée à un point d&rsquo;inflation en moins.</span></li>
-      <li><b>Autres contraintes</b><span>Hystérèse du chômage ; triangle d&rsquo;incompatibilité de Mundell et union monétaire.</span></li>
+      <li><b>Capital inflows</b><span>Higher rates attract foreign capital seeking better returns.</span></li>
+      <li><b>A stronger currency</b><span>Demand for the national currency rises and it appreciates.</span></li>
+      <li><b>Cheaper imports</b><span>Energy, raw materials and some foods cost less.</span></li>
+      <li><b>Example</b><span>The Swiss National Bank (SNB).</span></li>
     </ul>
-    <p class="ask">Arbitrer entre croissance et inflation.</p>
+    <p class="ask">Imported inflation falls.</p>
   </div>
-  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="Un funambule garde l’équilibre entre inflation et récession pendant qu’un baril de pétrole tombe"><g id="s4-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="The currency coin grows and the price tag on imports falls"><g id="s9-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+<path id="s9-up" d="M130 130 V70 M108 92 L130 66 L152 92" stroke-width="8" class="bl"/>
+<g id="s9-coin" transform="translate(130 240)"><circle r="50" fill="#fff" stroke-width="6" class="bl blf"/><circle r="34" fill="none" stroke-width="4" class="bl"/></g>
+<text x="130" y="392" text-anchor="middle" font-size="20" class="t-bl">CURRENCY</text>
+<rect x="520" y="330" width="90" height="70" fill="#fff" stroke-width="6"/>
+<path d="M520 348 H610" stroke-width="4"/>
+<text x="565" y="382" text-anchor="middle" font-size="15">IMPORTS</text>
+<rect id="s9-tg" x="525" y="250" width="80" height="46" rx="6" fill="#fff" stroke-width="5" class="rd"/>
+<text id="s9-pr" x="565" y="285" text-anchor="middle" font-size="30" class="t-rd">100</text>
+<path id="s9-dn" d="M650 250 V312 M628 290 L650 316 L672 290" stroke-width="8" class="bl"/>
+<g class="fig" id="s9-f"></g></g></svg></div>
+</section>
+<section class="slide split" data-anim="10">
+  <div class="txt">
+    <p class="tag">Part III</p>
+    <h2>Challenges, limitations and trade-offs</h2>
+    <ul>
+      <li><b>A. Recession risk</b><span>The trade-off between growth and inflation.</span></li>
+      <li><b>B. Time lags</b><span>Monetary policy takes time to work.</span></li>
+      <li><b>C. Supply shocks</b><span>Little effect on cost-push inflation.</span></li>
+    </ul>
+    <p class="ask">Walking a tightrope.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A tightrope walker balances between inflation and recession while an oil barrel falls"><g id="s10-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
 <g stroke-width="6"><path d="M-10 290 H150 V470"/><path d="M810 290 H650 V470"/>
 <path d="M40 340 l26 -16 M80 380 l26 -16 M30 420 l26 -16 M760 340 l-26 -16 M720 380 l-26 -16 M770 420 l-26 -16" stroke-width="4"/>
 <path d="M150 290 V258 M650 290 V258"/></g>
-<path id="s4-rope" d="M150 258 Q400 286 650 258" stroke-width="6"/>
-<g transform="translate(105 95)" stroke-width="6"><path d="M-70 22 C-100 22 -100 -20 -62 -22 C-60 -52 -15 -58 0 -38 C12 -62 62 -56 64 -26 C100 -24 100 22 66 22 Z" fill="#fff"/><text x="0" y="6" text-anchor="middle" font-size="24">Inflation</text></g>
-<g transform="translate(695 95)" stroke-width="6"><path d="M-70 22 C-100 22 -100 -20 -62 -22 C-60 -52 -15 -58 0 -38 C12 -62 62 -56 64 -26 C100 -24 100 22 66 22 Z" fill="#fff"/><text x="0" y="-14" text-anchor="middle" font-size="20">Récession</text><text x="0" y="10" text-anchor="middle" font-size="20">Chômage</text></g>
-<g id="s4-barrel" transform="translate(560 -80)" stroke-width="5"><rect x="-22" y="-30" width="44" height="60" rx="9" fill="#fff"/><path d="M-22 -14 H22 M-22 14 H22"/><path d="M0 -8 C8 3 8 10 0 13 C-8 10 -8 3 0 -8 Z" fill="#000"/></g>
-<g id="s4-f"><g id="s4-f-lL"><path d="M0 0 V78 H13"/></g><g id="s4-f-lR"><path d="M0 0 V78 H13"/></g><g id="s4-f-body"><g id="s4-f-aL"><path d="M0 0 V42"/><g id="s4-f-aL2"><path d="M0 0 V42"/></g></g><path d="M0 0 V-82"/><circle cx="0" cy="-106" r="24" fill="#fff"/><circle id="s4-f-eA" cx="9" cy="-110" r="3.4" fill="#000" stroke="none"/><circle id="s4-f-eB" cx="-7" cy="-110" r="3.4" fill="#000" stroke="none" opacity="0"/><path id="s4-f-mouth" d="M0 -96 Q8 -94 16 -96" stroke-width="4"/><g id="s4-f-aR"><path d="M0 0 V42"/><g id="s4-f-aR2"><path d="M0 0 V42"/></g></g></g></g>
-<g id="s4-pole" transform="translate(400 200)" stroke-width="6"><path d="M-150 0 H150"/><circle cx="-150" cy="0" r="9" fill="#fff"/><circle cx="150" cy="0" r="9" fill="#fff"/></g>
+<path id="s10-rope" d="M150 258 Q400 286 650 258" stroke-width="6"/>
+<g transform="translate(105 95)" stroke-width="6" class="rd"><path d="M-70 22 C-100 22 -100 -20 -62 -22 C-60 -52 -15 -58 0 -38 C12 -62 62 -56 64 -26 C100 -24 100 22 66 22 Z" fill="#fff" class="rdf"/><text class="t-rd" x="0" y="6" text-anchor="middle" font-size="24">Inflation</text></g>
+<g transform="translate(695 95)" stroke-width="6" class="bl"><path d="M-70 22 C-100 22 -100 -20 -62 -22 C-60 -52 -15 -58 0 -38 C12 -62 62 -56 64 -26 C100 -24 100 22 66 22 Z" fill="#fff" class="blf"/><text class="t-bl" x="0" y="-14" text-anchor="middle" font-size="19">Recession</text><text class="t-bl" x="0" y="10" text-anchor="middle" font-size="19">Unemployment</text></g>
+<g id="s10-barrel" transform="translate(560 -80)" stroke-width="5"><rect x="-22" y="-30" width="44" height="60" rx="9" fill="#fff"/><path d="M-22 -14 H22 M-22 14 H22"/><path d="M0 -8 C8 3 8 10 0 13 C-8 10 -8 3 0 -8 Z" fill="#dc2626" stroke="none"/></g>
+<g class="fig" id="s10-f"></g>
+<g id="s10-pole" transform="translate(400 200)" stroke-width="6" class="bl"><path d="M-150 0 H150"/><circle cx="-150" cy="0" r="9" fill="#fff"/><circle cx="150" cy="0" r="9" fill="#fff"/></g>
 </g></svg></div>
 </section>
-<section class="slide plain wide">
-  <p class="tag">Partie III &middot; B et C</p>
-  <h2>Des délais et des chocs d&rsquo;offre</h2>
-  <div class="cols">
-    <div>
-      <h3>B. Les délais d&rsquo;action</h3>
-      <ul>
-        <li><b>Reconnaissance et décision</b><span>Données publiées avec retard, puis révisées.</span></li>
-        <li><b>Transmission financière</b><span>Les taux débiteurs s&rsquo;ajustent progressivement (prêts à taux fixe ou variable, concurrence bancaire).</span></li>
-        <li><b>Délai réel et prix</b><span>Consommation, investissement et tarifs s&rsquo;ajustent lentement (contrats, stocks).</span></li>
-      </ul>
-    </div>
-    <div>
-      <h3>C. L&rsquo;inflation par les coûts</h3>
-      <ul>
-        <li><b>Pas d&rsquo;excès de demande</b><span>La hausse des prix vient des coûts de production.</span></li>
-        <li><b>Risque de stagflation</b><span>Relever fortement les taux freine une activité déjà pénalisée : inflation haute, croissance nulle, chômage en hausse.</span></li>
-        <li><b>Limites de l&rsquo;action</b><span>Elle ne peut pas baisser le prix du baril ; elle évite les effets de second tour, et le budget et les réformes la complètent.</span></li>
-      </ul>
-    </div>
+<section class="slide split" data-anim="11">
+  <div class="txt">
+    <p class="tag">Part III &middot; A</p>
+    <h2>The risk of recession</h2>
+    <ul>
+      <li><b>The dilemma</b><span>Curbing inflation means compressing demand. A sharp slowdown weighs on activity and jobs.</span></li>
+      <li><b>a. Phillips curve</b><span>A short-term trade-off between price stability and employment.</span></li>
+      <li><b>b. Sacrifice ratio</b><span>The cumulative GDP loss for a one-point cut in inflation.</span></li>
+      <li><b>c. Other constraints</b><span>Hysteresis, and Mundell&rsquo;s impossible trinity in a monetary union.</span></li>
+    </ul>
+    <p class="ask">Growth against inflation.</p>
   </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A point slides down the Phillips curve as the lever pushes inflation down and unemployment up"><g id="s11-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+<path d="M380 100 V380 H770 M366 116 L380 98 L394 116 M752 366 L772 380 L752 394" stroke-width="5"/>
+<text transform="translate(358 240) rotate(-90)" text-anchor="middle" font-size="18" class="t-rd">INFLATION</text>
+<text x="575" y="428" text-anchor="middle" font-size="18" class="t-bl">UNEMPLOYMENT</text>
+<path d="M410 130 C415 290 520 365 760 370" fill="none" stroke-width="5" stroke-dasharray="3 12" class="bl"/>
+<circle id="s11-dot" r="12" fill="#dc2626" stroke-width="4" transform="translate(410 130)"/>
+<text id="s11-rec" x="650" y="320" text-anchor="middle" font-size="26" class="t-bl" opacity="0">RECESSION?</text>
+<path d="M250 352 V400 M220 352 H280" stroke-width="6"/>
+<g id="s11-lv" transform="translate(250 350)" class="bl" stroke-width="6"><path d="M0 0 V-85"/><circle cx="0" cy="-85" r="11" fill="#fff" class="blf"/></g>
+<g class="fig" id="s11-f"></g></g></svg></div>
 </section>
-<section class="slide split" data-anim="4">
+<section class="slide split" data-anim="12">
+  <div class="txt">
+    <p class="tag">Part III &middot; B</p>
+    <h2>The time lags of monetary policy</h2>
+    <ul>
+      <li><b>a. Recognition and decision</b><span>Data are published late and revised before the bank can decide.</span></li>
+      <li><b>b. Financial transmission</b><span>Rate changes reach lending rates gradually (fixed or variable loans, bank competition).</span></li>
+      <li><b>c. Real economy and prices</b><span>Spending adjusts slowly, and firms revise prices according to contracts, inventories and billing.</span></li>
+    </ul>
+    <p class="ask">Patience is part of the policy.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="The figure walks slowly past three flags while a clock turns: policy takes time"><g id="s12-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/><path d="M270 400 V250" stroke-width="6"/><path id="s12-fl0" d="M270 250 L332 270 L270 290 Z" fill="#fff" stroke-width="5" class="bl"/><text x="278" y="232" text-anchor="middle" font-size="17" class="t-bl">DECIDE</text><path d="M460 400 V250" stroke-width="6"/><path id="s12-fl1" d="M460 250 L522 270 L460 290 Z" fill="#fff" stroke-width="5" class="bl"/><text x="468" y="232" text-anchor="middle" font-size="17" class="t-bl">BANKS</text><path d="M650 400 V250" stroke-width="6"/><path id="s12-fl2" d="M650 250 L712 270 L650 290 Z" fill="#fff" stroke-width="5" class="bl"/><text x="658" y="232" text-anchor="middle" font-size="17" class="t-bl">PRICES</text>
+<circle cx="110" cy="110" r="44" fill="#fff" stroke-width="6" class="bl"/>
+<path d="M110 74 V80 M110 140 V146 M74 110 H80 M140 110 H146" stroke-width="4"/>
+<g transform="translate(110 110)"><g id="s12-ck"><path d="M0 0 V-32" stroke-width="5" class="bl"/></g></g>
+<text x="110" y="178" text-anchor="middle" font-size="17" class="t-bl">TIME LAG</text>
+<g id="s12-par" transform="translate(735 130) rotate(-55)" class="rd" stroke-width="7"><path d="M-46 0 H46 M20 -22 L48 0 L20 22"/></g>
+<text x="735" y="190" text-anchor="middle" font-size="17" class="t-rd">INFLATION</text>
+<g class="fig" id="s12-f"></g></g></svg></div>
+</section>
+<section class="slide split" data-anim="13">
+  <div class="txt">
+    <p class="tag">Part III &middot; C</p>
+    <h2>Cost-push inflation (supply shocks)</h2>
+    <ul>
+      <li><b>a. Not excess demand</b><span>Prices rise because production costs rise.</span></li>
+      <li><b>b. Risk of stagflation</b><span>High inflation, weak growth and rising unemployment.</span></li>
+      <li><b>c. Limits of action</b><span>The bank cannot lower the price of a barrel of oil. It prevents second-round effects; fiscal and structural measures can help.</span></li>
+    </ul>
+    <p class="ask">Rates cannot fix an oil shock.</p>
+  </div>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="The figure pulls the rate lever but the red PRICES arrow keeps rising after an oil shock"><g id="s13-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+<path d="M240 352 V400 M210 352 H270" stroke-width="6"/>
+<g id="s13-lv" transform="translate(240 350)" class="bl" stroke-width="6"><path d="M0 0 V-85"/><circle cx="0" cy="-85" r="11" fill="#fff" class="blf"/></g>
+<g id="s13-brl" transform="translate(480 400)"><rect x="-38" y="-100" width="76" height="100" rx="14" fill="#fff" stroke-width="6"/><path d="M-38 -70 H38 M-38 -30 H38"/><text y="-44" text-anchor="middle" font-size="24" class="t-bl">OIL</text></g>
+<g id="s13-par" transform="translate(690 300)"><g transform="scale(.8)"><g id="s13-fl" stroke-width="6" class="rd"><path d="M-20 82 L-10 112 L0 88 L10 116 L20 82"/></g><path d="M-30 74 V-50 H-58 L0 -108 L58 -50 H30 V74 Z" fill="#fff" class="rd rdf"/><text transform="rotate(-90) translate(0 12)" text-anchor="middle" font-size="26" class="t-rd">PRICES</text></g></g>
+<g class="fig" id="s13-f"></g></g></svg></div>
+</section>
+<section class="slide split" data-anim="14">
   <div class="txt">
     <p class="tag">Conclusion</p>
-    <h2>La stabilité des prix</h2>
+    <h2>Price stability</h2>
     <ul>
-      <li><b>Un outil essentiel</b><span>La politique monétaire contribue à maîtriser l&rsquo;inflation et à stabiliser les prix.</span></li>
-      <li><b>Comment</b><span>Par les taux directeurs, le contrôle de la masse monétaire et l&rsquo;ancrage des anticipations.</span></li>
-      <li><b>Ses limites</b><span>Elle agit avec des délais et doit tenir compte de l&rsquo;origine de l&rsquo;inflation, de l&rsquo;activité et de l&rsquo;emploi.</span></li>
+      <li><b>An essential tool</b><span>Monetary policy helps control inflation and contribute to price stability.</span></li>
+      <li><b>How it works</b><span>Through key interest rates, control of the money supply and anchoring of expectations.</span></li>
+      <li><b>Its limits</b><span>It acts with time lags and must consider the origin of inflation and its effects on activity and employment.</span></li>
     </ul>
-    <p class="ask">Prix stables d&rsquo;un côté, économie stable de l&rsquo;autre.</p>
+    <p class="ask">Stable prices on one side, a stable economy on the other.</p>
   </div>
-  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="Un personnage sourit près d’une balance équilibrée et lève le pouce"><g id="s5-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
+  <div class="art"><svg class="scene" viewBox="0 0 800 450" role="img" aria-label="A stick figure smiles beside a balanced scale and gives a thumbs up"><g id="s14-art" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"><path d="M30 402 Q200 398 400 403 T770 400"/>
 <g stroke-width="6"><path d="M520 402 H600"/><path d="M560 400 V190"/></g>
-<g id="s5-beam" transform="translate(560 190)"><path d="M-150 0 H150" stroke-width="7"/><circle r="10" fill="#fff" stroke-width="6"/></g>
-<g id="s5-panL" transform="translate(410 190)" stroke-width="5"><path d="M0 0 L-58 80 M0 0 L58 80"/><path d="M-64 80 Q0 110 64 80 Z" fill="#fff"/>
-<text x="0" y="44" text-anchor="middle" font-size="14">PRIX</text><path d="M-24 68 H24 M10 58 L24 68 L10 78" stroke-width="5"/></g>
-<g id="s5-panR" transform="translate(710 190)" stroke-width="5"><path d="M0 0 L-58 80 M0 0 L58 80"/><path d="M-64 80 Q0 110 64 80 Z" fill="#fff"/>
+<g id="s14-beam" transform="translate(560 190)"><path d="M-150 0 H150" stroke-width="7"/><circle r="10" fill="#fff" stroke-width="6"/></g>
+<g id="s14-panL" transform="translate(410 190)" stroke-width="5" class="bl"><path d="M0 0 L-58 80 M0 0 L58 80"/><path d="M-64 80 Q0 110 64 80 Z" fill="#fff"/>
+<text x="0" y="44" text-anchor="middle" font-size="13" class="t-bl">PRICES</text><path d="M-24 68 H24 M10 58 L24 68 L10 78" stroke-width="5"/></g>
+<g id="s14-panR" transform="translate(710 190)" stroke-width="5" class="bl"><path d="M0 0 L-58 80 M0 0 L58 80"/><path d="M-64 80 Q0 110 64 80 Z" fill="#fff"/>
 <path d="M-28 76 V50 L-10 62 V50 L8 62 V50 L28 62 V76 Z" fill="#fff"/><path d="M12 56 V34 H24 V60" fill="#fff"/></g>
-<g id="s5-f"><g id="s5-f-lL"><path d="M0 0 V78 H13"/></g><g id="s5-f-lR"><path d="M0 0 V78 H13"/></g><g id="s5-f-body"><g id="s5-f-aL"><path d="M0 0 V42"/><g id="s5-f-aL2"><path d="M0 0 V42"/></g></g><path d="M0 0 V-82"/><circle cx="0" cy="-106" r="24" fill="#fff"/><circle id="s5-f-eA" cx="9" cy="-110" r="3.4" fill="#000" stroke="none"/><circle id="s5-f-eB" cx="-7" cy="-110" r="3.4" fill="#000" stroke="none" opacity="0"/><path id="s5-f-mouth" d="M0 -96 Q8 -94 16 -96" stroke-width="4"/><g id="s5-f-aR"><path d="M0 0 V42"/><g id="s5-f-aR2"><path d="M0 0 V42"/></g></g></g></g>
-<g id="s5-th" stroke-width="5"><circle r="10" fill="#fff"/><path d="M-1 -8 V-26" stroke-width="8"/></g>
+<g class="fig" id="s14-f"></g>
+<g id="s14-th" stroke-width="5"><circle r="10" fill="#fff"/><path d="M-1 -8 V-26" stroke-width="8"/></g>
 </g></svg></div>
 </section>
-
 <section class="slide title">
-  <p class="tag">Merci</p>
-  <h1>Des questions&nbsp;?</h1>
-  <p class="sub">La politique monétaire face à l&rsquo;inflation</p>
+  <p class="tag">Thank you</p>
+  <h1>Any <em>questions</em>?</h1>
+  <p class="sub">Monetary policy against inflation</p>
 </section>
-
 <div class="bar">
-<button id="prev" type="button" aria-label="Diapositive précédente" title="Précédente (flèche gauche)">&#8249;</button>
-<span id="count">1 / 8</span>
-<button id="next" type="button" aria-label="Diapositive suivante" title="Suivante (flèche droite)">&#8250;</button>
-<button id="pp" type="button" aria-label="Pause ou reprise de l'animation" title="Pause / reprise (espace)">
-<svg viewBox="0 0 34 34" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="17" r="15"/><path id="ic-pause" d="M13 11v12M21 11v12"/><path id="ic-play" d="M14 10.5l10 6.5-10 6.5z" fill="#000" display="none"/></svg>
+<button id="prev" type="button" aria-label="Previous slide" title="Previous (left arrow)">&#8249;</button>
+<span id="count">1 / 17</span>
+<button id="next" type="button" aria-label="Next slide" title="Next (right arrow)">&#8250;</button>
+<button id="pp" type="button" aria-label="Pause or resume animation" title="Pause / resume (space)">
+<svg viewBox="0 0 34 34" fill="none" stroke="#1d4ed8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="17" r="15"/><path id="ic-pause" d="M13 11v12M21 11v12"/><path id="ic-play" d="M14 10.5l10 6.5-10 6.5z" fill="#1d4ed8" display="none"/></svg>
 </button>
-<button id="fs" type="button" aria-label="Plein écran" title="Plein écran (F)">
-<svg viewBox="0 0 34 34" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="17" r="15"/><path d="M11 15v-4h4M23 15v-4h-4M11 19v4h4M23 19v4h-4"/></svg>
+<button id="fs" type="button" aria-label="Full screen" title="Full screen (F)">
+<svg viewBox="0 0 34 34" fill="none" stroke="#1d4ed8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="17" r="15"/><path d="M11 15v-4h4M23 15v-4h-4M11 19v4h4M23 19v4h-4"/></svg>
 </button>
 </div>
-<script>
-let P='';
-const $=id=>document.getElementById(P+id);
-const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-const lerp=(a,b,t)=>a+(b-a)*t;
-const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
-const seg=(t,a,b)=>clamp((t-a)/(b-a));
-const eseg=(t,a,b)=>ease(seg(t,a,b));
-const bell=(t,a,b)=>Math.sin(Math.PI*seg(t,a,b));
-const mx=(a,b,w)=>[a[0]+(b[0]-a[0])*w,a[1]+(b[1]-a[1])*w];
-const RAD=Math.PI/180;
-const setT=(id,s)=>$(id).setAttribute('transform',s);
-const setO=(id,o)=>$(id).setAttribute('opacity',o);
-const L1=42,L2=42,SY=-66;
-const fc=p=>{const f=p.face===undefined?1:p.face;return Math.abs(f)<.03?.03:f;};
-function ik(sx,sy,tx,ty,l1,l2,bend){
-  let dx=tx-sx,dy=ty-sy,D=Math.hypot(dx,dy);
-  const m=l1+l2-0.5;
-  if(D>m){dx*=m/D;dy*=m/D;D=m;}
-  if(D<10){const k=10/(D||1);dx=(dx*k)||0;dy=(dy*k)||10;D=10;}
-  const phi=Math.atan2(-dx,dy);
-  const al=Math.acos(clamp((l1*l1+D*D-l2*l2)/(2*l1*D),-1,1));
-  const a=phi+bend*al;
-  const ex=sx-l1*Math.sin(a),ey=sy+l1*Math.cos(a);
-  const b=Math.atan2(-(sx+dx-ex),sy+dy-ey);
-  return [a/RAD,(b-a)/RAD];
-}
-function toLocal(p,wx,wy){
-  const sg=(p.face===undefined||p.face>=0)?1:-1,a=-(p.lean||0)*RAD;
-  const x=(wx-p.x)*sg,y=wy-p.y;
-  return [x*Math.cos(a)-y*Math.sin(a),x*Math.sin(a)+y*Math.cos(a)];
-}
-function handWorld(p,g){
-  const a=g[0]*RAD,b=(g[0]+g[1])*RAD;
-  const x=-L1*Math.sin(a)-L2*Math.sin(b),y=SY+L1*Math.cos(a)+L2*Math.cos(b);
-  const l=(p.lean||0)*RAD;
-  return [p.x+fc(p)*(x*Math.cos(l)-y*Math.sin(l)),p.y+x*Math.sin(l)+y*Math.cos(l)];
-}
-function pose(id,p){
-  setT(id,`translate(${p.x} ${p.y}) scale(${fc(p)} 1)`);
-  setT(id+'-body',`rotate(${p.lean||0})`);
-  setT(id+'-lL',`rotate(${p.lL||0})`);
-  setT(id+'-lR',`rotate(${p.lR||0})`);
-  const out={};
-  for(const s of ['L','R']){
-    const h=p['h'+s];
-    let g;
-    if(h){const q=toLocal(p,h[0],h[1]);g=ik(0,SY,q[0],q[1],L1,L2,1);}
-    else g=p['a'+s]||[0,0];
-    setT(`${id}-a${s}`,`translate(0 ${SY}) rotate(${g[0]})`);
-    setT(`${id}-a${s}2`,`translate(0 ${L1}) rotate(${g[1]})`);
-    out['h'+s]=handWorld(p,g);
-  }
-  const fr=p.front||0,sm=p.smile===undefined?.2:p.smile,cx=8*(1-fr);
-  $(id+'-mouth').setAttribute('d',`M${cx-8} -96 Q${cx} ${-96+16*sm} ${cx+8} -96`);
-  $(id+'-eA').setAttribute('cx',9-2*fr);
-  $(id+'-eB').setAttribute('opacity',fr);
-  return out;
-}
-const scenes=[];
-scenes.push((()=>{
-const LOOP=9;
-function scene(T){
-  const t=T;
-  const p1=eseg(t,0,1.4),p2=eseg(t,1.5,5.0),r=eseg(t,7.2,9);
-  const m3=(a,b,c)=>lerp(lerp(lerp(a,b,p1),c,p2),a,r);
-  const hold=seg(t,5.0,5.6)*(1-r);
-  const ax=m3(575,575,560),th=m3(0,-5,90),ay=m3(300,165,275)+3*Math.sin(t*4)*hold;
-  setT('arrow',`translate(${ax} ${ay}) rotate(${th})`);
-  const fl=clamp(p1*4)*(1-clamp(p2*1.6))*(1-r);
-  setT('flame',`translate(0 82) scale(1 ${(.2+fl*(.8+.25*Math.sin(t*35))).toFixed(3)}) translate(0 -82)`);
-  setO('flame',fl>.03?1:0);
-  const ten=lerp(lerp(.35,1,clamp(p1*2)),.35,r);
-  const brace=clamp(p1*2)*(1-r);
-  const fx=m3(215,262,205),lean=m3(2,18,-16);
-  const jig=bell(t,1.6,5.0)*Math.sin((t-1.5)*5)*9;
-  const h=pose('f',{x:fx,y:322,face:1,lean,lL:22*brace,lR:-26*brace,hR:[fx+66+jig,262],hL:[fx+52+jig,270],smile:m3(.2,-.8,1)});
-  const A=[ax-25*Math.sin(th*RAD),ay+25*Math.cos(th*RAD)],H=h.hR,sag=46*(1-ten);
-  $('rope').setAttribute('d',`M${H[0]} ${H[1]} Q${(H[0]+A[0])/2} ${(H[1]+A[1])/2+sag} ${A[0]} ${A[1]}`);
-}
-return {P:'s1-',loop:LOOP,fn:scene};})());
-scenes.push((()=>{
-const LOOP=11,N=16,PP=1.3;
-function scene(T){
-  const t=T;
-  setO('art',clamp(t/.4)*(1-seg(t,10.5,11)));
-  const hy=lerp(265,188,eseg(t,1.5,2.5));
-  $('hA').setAttribute('cy',hy);
-  const bA=lerp(38,-35,eseg(t,4.1,4.9));
-  setT('lvB',`translate(340 295) rotate(${bA})`);
-  const W=270*eseg(t,6.6,8.6);
-  setT('wheel',`translate(650 215) rotate(${W})`);
-  const flow=1-.97*eseg(t,6.6,8.6);
-  setT('needle',`translate(415 150) rotate(${lerp(-62,62,flow)+1.5*Math.sin(t*9)})`);
-  for(let i=0;i<N;i++){
-    const u=(((t-i*PP/N)%PP)+PP)%PP/PP;
-    const on=i<flow*N;
-    const x=650+7*Math.sin(i*2.1+u*3),y=272+100*u*u;
-    setT('c'+i,`translate(${x} ${y}) rotate(${u*220*(i%2?1:-1)})`);
-    setO('c'+i,on?clamp((1-u)*8):0);
-  }
-  const wA=eseg(t,1.0,1.4)*(1-eseg(t,2.5,2.9));
-  const wB=eseg(t,3.7,4.1)*(1-eseg(t,4.9,5.3));
-  const wV=eseg(t,6.2,6.6)*(1-eseg(t,8.7,9.2));
-  const mov=bell(t,2.9,3.7)+bell(t,5.3,6.2);
-  const fx=150+150*eseg(t,2.9,3.7)+265*eseg(t,5.3,6.2);
-  const ph=Math.sin(t*14),fy=400-78*Math.cos(26*RAD*Math.abs(ph)*mov),sw=22*ph*mov;
-  const iR=[fx+8-sw,fy+12],iL=[fx-8+sw,fy+12];
-  const HA=[215,hy],HB=[340+82*Math.sin(bA*RAD),295-82*Math.cos(bA*RAD)];
-  const g=(180+(W%90))*RAD,HV=[650+30*Math.cos(g),215+30*Math.sin(g)];
-  let hR=mx(iR,HA,wA);hR=mx(hR,HB,wB);hR=mx(hR,HV,wV);
-  pose('f',{x:fx,y:fy,face:1,lean:12*(wA+wB)+4*wV,lL:26*ph*mov,lR:-26*ph*mov,hL:iL,hR,smile:lerp(.2,1,eseg(t,8.8,9.4))});
-}
-
-return {P:'s2-',loop:LOOP,fn:scene};})());
-scenes.push((()=>{
-const LOOP=10.5,GY=400,HP=[76,303];
-function scene(T){
-  const t=T;
-  const w1=eseg(t,0,2.2),w2=eseg(t,4.85,7.0);
-  const fx=lerp(lerp(146,372,w1),146,w2);
-  const face=lerp(lerp(1,-1,eseg(t,4.4,4.85)),1,eseg(t,9.2,9.7));
-  const sg=face>=0?1:-1;
-  const mov=bell(t,0,2.2)+bell(t,4.85,7.0);
-  const ph=Math.sin(t*10);
-  const fy=GY-78*Math.cos(26*RAD*Math.abs(ph)*mov),sw=22*ph*mov;
-  const iR=[fx+sg*(8-sw),fy+12],iL=[fx+sg*(-8+sw),fy+12];
-  const hw=eseg(t,2.2,2.6)*(1-eseg(t,4.2,4.6));
-  const chest=[fx+sg*30,fy-48],shrug=[fx+sg*44,fy-74+7*Math.sin(t*6)];
-  const wP=eseg(t,6.6,7.2)*(1-eseg(t,8.0,8.6));
-  const hL=mx(iL,chest,hw);
-  let hR=mx(iR,shrug,hw);hR=mx(hR,HP,wP);
-  let sm=lerp(.2,-.6,hw);sm=lerp(sm,1,eseg(t,8.2,8.7)*(1-eseg(t,9.9,10.4)));
-  const h=pose('f',{x:fx,y:fy,face,lL:26*ph*mov,lR:-26*ph*mov,hL,hR,smile:sm});
-  const wv=eseg(t,2.0,2.4)*(1-eseg(t,4.4,4.8));
-  setT('wal',`translate(${h.hL[0]} ${h.hL[1]-4}) scale(${Math.max(wv,.001)})`);
-  setT('wf',`translate(-15 -10) rotate(${-72*eseg(t,2.7,3.0)*(1-eseg(t,3.8,4.1))})`);
-  setO('wal',wv>.02?1:0);
-  setT('sw',`translate(${fx+sg*34} ${fy-128+8*seg(t,2.5,4.3)})`);
-  setO('sw',bell(t,2.5,4.3));
-  let cp=h.hR;
-  if(t>=7.5){const e=eseg(t,7.5,8.2);cp=[lerp(HP[0],68,e),lerp(HP[1],326,e)];}
-  const cv=(t>4.5&&t<8.25)?eseg(t,4.5,4.8)*(1-eseg(t,8.0,8.25)):0;
-  setT('coin',`translate(${cp[0]} ${cp[1]}) scale(${Math.max(cv,.001)})`);
-  setO('coin',cv>.01?1:0);
-  const pg=bell(t,8.1,8.7);
-  setT('pig',`translate(72 398) scale(${1+.08*pg} ${1-.12*pg})`);
-  setT('tag',`translate(700 112) rotate(${4*Math.sin(2*Math.PI*4*t/LOOP)+hw*4*Math.sin(t*7)})`);
-  let ang=-45-15*seg(t,0,6.8);
-  ang=lerp(ang,-5,eseg(t,7.0,8.8));
-  ang=lerp(ang,-45,eseg(t,9.4,10.5));
-  setT('pa',`translate(130 92) rotate(${ang})`);
-}
-return {P:'s3-',loop:LOOP,fn:scene};})());
-scenes.push((()=>{
-const LOOP=10;
-function scene(T){
-  const t=T,w=k=>2*Math.PI*k*t/LOOP;
-  const tau=t-3.2,shock=tau>0?Math.exp(-1.7*tau)*Math.sin(11*tau):0;
-  const cy=258+28+30*shock;
-  $('rope').setAttribute('d',`M150 258 Q400 ${cy} 650 258`);
-  const fx=400+24*Math.sin(w(2))+14*shock;
-  const lean=8*Math.sin(w(4)+.7)+30*shock;
-  const lL=14*Math.sin(w(8)),lR=-lL;
-  const tt=(fx-150)/500,ropeY=258+2*tt*(1-tt)*(cy-258);
-  const fy=ropeY-78*Math.cos(Math.abs(lL)*RAD);
-  const cx=fx+66*Math.sin(lean*RAD)+20,cyy=fy-66*Math.cos(lean*RAD)+38;
-  const th=-1.5*lean+6*Math.sin(w(4));
-  setT('pole',`translate(${cx} ${cyy}) rotate(${th})`);
-  const sm=lerp(lerp(.2,-.9,eseg(t,2.9,3.3)),.2,eseg(t,5.0,6.2));
-  pose('f',{x:fx,y:fy,face:1,lean,lL,lR,hL:[cx-5,cyy],hR:[cx+5,cyy],smile:sm});
-  let by=-90;
-  if(t>=1.8&&t<3.2){const u=seg(t,1.8,3.2);by=-60+330*u*u;}
-  else if(t>=3.2){const q=t-3.2;by=270+471*q+300*q*q;}
-  setT('barrel',`translate(560 ${by}) rotate(${(t-1.8)*90})`);
-  setO('barrel',(by>-70&&by<490)?1:0);
-}
-return {P:'s4-',loop:LOOP,fn:scene};})());
-scenes.push((()=>{
-const LOOP=8,CX=560,CY=190,HALF=150;
-function scene(T){
-  const t=T;
-  const b=3*Math.sin(2*Math.PI*t/4);
-  setT('beam',`translate(${CX} ${CY}) rotate(${b})`);
-  setT('panL',`translate(${CX-HALF*Math.cos(b*RAD)} ${CY-HALF*Math.sin(b*RAD)})`);
-  setT('panR',`translate(${CX+HALF*Math.cos(b*RAD)} ${CY+HALF*Math.sin(b*RAD)})`);
-  const fr=eseg(t,2.0,2.6)*(1-eseg(t,6.8,7.4));
-  const w=eseg(t,2.4,3.0)*(1-eseg(t,6.6,7.2));
-  const fx=240,fy=322;
-  const bob=4*Math.sin(2*Math.PI*t/2)*w;
-  const hR=mx([fx+8,fy+12],[fx+34,fy-118+bob],w);
-  const h=pose('f',{x:fx,y:fy,face:1,front:fr,aL:[lerp(6,20,fr),6],hR,smile:lerp(.2,1,fr)});
-  setT('th',`translate(${h.hR[0]} ${h.hR[1]})`);
-  setO('th',w>.25?1:0);
-}
-return {P:'s5-',loop:LOOP,fn:scene};})());
-const slides=[...document.querySelectorAll('.slide')];
-const counter=document.getElementById('count');
-const turb=document.getElementById('turb');
-let cur=0,T=0,last=0,paused=false,seed=0;
-const aOf=i=>{const v=slides[i].dataset.anim;return v===undefined?-1:+v;};
-function setP(v){
-  paused=v;
-  document.getElementById('ic-pause').setAttribute('display',v?'none':'inline');
-  document.getElementById('ic-play').setAttribute('display',v?'inline':'none');
-}
-function go(n){
-  n=clamp(n,0,slides.length-1);
-  slides[cur].classList.remove('on');
-  cur=n;slides[cur].classList.add('on');
-  T=0;
-  const a=aOf(cur);
-  if(a>=0){P=scenes[a].P;scenes[a].fn(0);}
-  counter.textContent=(cur+1)+' / '+slides.length;
-  try{history.replaceState(null,'','#'+(cur+1));}catch(e){}
-}
-function fullscreen(){
-  try{
-    if(document.fullscreenElement)document.exitFullscreen();
-    else document.documentElement.requestFullscreen();
-  }catch(e){}
-}
-document.getElementById('prev').addEventListener('click',()=>go(cur-1));
-document.getElementById('next').addEventListener('click',()=>go(cur+1));
-document.getElementById('pp').addEventListener('click',e=>{setP(!paused);e.currentTarget.blur();});
-document.getElementById('fs').addEventListener('click',e=>{fullscreen();e.currentTarget.blur();});
-addEventListener('keydown',e=>{
-  const k=e.key;
-  if(k==='ArrowRight'||k==='PageDown'||k==='Enter'||k==='ArrowDown'){e.preventDefault();go(cur+1);}
-  else if(k==='ArrowLeft'||k==='PageUp'||k==='Backspace'||k==='ArrowUp'){e.preventDefault();go(cur-1);}
-  else if(k==='Home'){go(0);}
-  else if(k==='End'){go(slides.length-1);}
-  else if(k===' '&&!(e.target&&e.target.tagName==='BUTTON')){e.preventDefault();setP(!paused);}
-  else if(k==='f'||k==='F'){fullscreen();}
-});
-let tx=null;
-addEventListener('touchstart',e=>{tx=e.changedTouches[0].clientX;},{passive:true});
-addEventListener('touchend',e=>{
-  if(tx===null)return;
-  const d=e.changedTouches[0].clientX-tx;tx=null;
-  if(Math.abs(d)>50)go(d<0?cur+1:cur-1);
-},{passive:true});
-setP(!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches));
-const h0=parseInt(location.hash.slice(1),10);
-go(isNaN(h0)?0:h0-1);
-function frame(now){
-  if(!last)last=now;
-  const dt=Math.min(.05,(now-last)/1000);last=now;
-  const a=aOf(cur);
-  if(!paused&&a>=0){
-    T=(T+dt)%scenes[a].loop;
-    P=scenes[a].P;scenes[a].fn(T);
-    const s=1+Math.floor(T*8)%3;
-    if(s!==seed){seed=s;turb.setAttribute('seed',s);}
-  }
-  requestAnimationFrame(frame);
-}
-requestAnimationFrame(frame);
-</script>
+<script src="script.js"></script>
 </body>
 </html>
-
